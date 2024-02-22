@@ -12,28 +12,31 @@ library(tidyverse)
 library(janitor)
 library(clipr)
 library(sf)
+library(rgdal)
 library(tmap)
 
 
 # 1. Read in data -------------------------------------------------------------
 
-# pluto <- read_csv("https://data.cityofnewyork.us/resource/64uk-42ks.csv")
+pluto <- read_csv("https://data.cityofnewyork.us/resource/64uk-42ks.csv")
 
-pluto_url <- URLencode("https://data.cityofnewyork.us/resource/64uk-42ks.csv?$query=SELECT *
+pluto_url <- URLencode("https://data.cityofnewyork.us/resource/64uk-42ks.csv?$query=
+                        SELECT borough, block, lot, bbl, ownername, bct2020, bldgclass, landuse
                         LIMIT 1000000")
 
 pluto <- read_csv(pluto_url)
 
 # use ownername filtering criteria developed below to restrict the giant file
 ## of MapPLUTO to make this run much faster
-mp <- st_read("/Users/henrykanengiser/Desktop/NYU/CLASSES/FALL_23/Transportation, Land Use, and Urban Form/FINAL PROJECT/dat/nyc_mappluto_23v3_shp/MapPLUTO.shp",
-              query = "SELECT bbl, ownername 
-                       FROM \"MapPLUTO\" 
-                       WHERE ownername LIKE 'MTA%' OR
-                             ownername LIKE 'LIRR%' OR
-                             ownername LIKE 'NYC T%' OR 
-                             ownername LIKE '%TRANSIT%' OR
-                             ownername LIKE 'METROPOLITAN TRANSPORTATION AUTHORITY'")
+mp <- st_read("dat/nyc_mappluto_23v3_1_fgdb/MapPLUTO23v3_1.gdb",
+              layer = "MapPLUTO_23v3_1_clipped",
+              query = "SELECT BBL, OwnerName 
+                       FROM \"MapPLUTO_23v3_1_clipped\" 
+                       WHERE OwnerName LIKE 'MTA%' OR
+                             OwnerName LIKE 'LIRR%' OR
+                             OwnerName LIKE 'NYC T%' OR 
+                             OwnerName LIKE '%TRANSIT%' OR
+                             OwnerName LIKE 'METROPOLITAN TRANSPORTATION AUTHORITY'")
 
 
 
