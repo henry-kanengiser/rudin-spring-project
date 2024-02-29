@@ -12,7 +12,7 @@ library(tidyverse)
 library(janitor)
 library(clipr)
 library(sf)
-library(rgdal)
+# library(rgdal)
 library(tmap)
 
 
@@ -81,5 +81,14 @@ pluto_owner %>%
 ##  Example: J/Z elevated stations and 7 trains with stations in the ROW do not have tax lot status
 ##   so they aren't included in PLUTO
 # Doesn't seem like that data is going to be published according to the MTA Open Data catalog, nor does it exist anywhere
+
+
+# 3. Save permanent file ------------------------------------------------------
+
+mp %>%
+  rename(name = OwnerName) %>%
+  st_write("dat/mappluto_mtaowned/mappluto_mtaowned.shp", delete_dsn = T)
+
+
 
 
