@@ -1,0 +1,32 @@
+Borough,Depot,Address,BBL,MTAOwnerName,Notes
+Bronx,Eastchester,"2340 Tillotson Ave, Bronx, NY 10475",2052780060; 2052550020; 2052560040; 2052550001; 2052560210,0,
+Bronx,Gun Hill,"1824 Allerton Ave, Bronx, NY 10469",2048040100,1,
+Bronx,Kingsbridge,"4065 10th Ave, New York, NY 10034",1022130006; 1021970001,1,
+Bronx,West Farms,"1100 E 177th St, Bronx, NY 10460",2039040040; 2039040016,1,
+Bronx,Yonkers,"60 Babcock Pl, Yonkers, NY 10701",,0,Outside NYC - may need to manually draw a shapefile for the building footprint?
+Brooklyn,East New York,"25 Jamaica Ave, Brooklyn, NY 11207",3034760010,1,"This includes a train yard also, may need to be careful about that or check the bldg footprint info"
+Brooklyn,Flatbush,"4901 Fillmore Ave, Brooklyn, NY 11234",3084890001; 3078940001; 3078940001,1,
+Brooklyn,Fresh Pond,"66-99 Fresh Pond Rd, Queens, NY 11385",4036190003,1,
+Brooklyn,Grand Avenue,"48-05 Grand Ave, Maspeth, NY 11378",4026020001; 4026020045,1,
+Brooklyn,Jackie Gleason,"871 5th Ave, Brooklyn, NY 11232",3009030190; 3009030180,0,
+Brooklyn,Ulmer Park,"2449 Harway Ave, Brooklyn, NY 11214",3068930001; 3068920023; 3068940001,1,
+Manhattan,Manhattanville,"601 W 133rd St, New York, NY 10027",1019990001,1,
+Manhattan,Michael J. Quill,"525 11th Ave, New York, NY 10018",1010880001,1,
+Manhattan,Monther Clara Hale,"721 Malcolm X Blvd, New York, NY 10039",1020150006,1,Note: this terminal already has a green roof
+Manhattan,Tuskegee Airmen,"1552 Lexington Ave, New York, NY 10029",1016270001,1,
+Queens,Casey Stengel,"123-53 Willets Point Blvd, Queens, NY 11368",4020181000,1,There are other MTA owned lots nearby but this is the only one with the bus depot. The train maintenance facility (Corona) has solar panels (PDF)
+Queens,College Point,"128-15 28th Ave, College Point, NY 11354",4042950001; 4043000001,1,"Seems to be a DOT building on the north side of the lot, may need to manually check which building footprints are included)"
+Queens,Jamaica,"165-18 Tuskegee Airmen Way, South Jamaica, NY 11433",4101640060; 4101640063; 4101640068; 4101640072; 4101640090; 4101640095; 4101640041; 4101640053; 4101640066; 4101640080; 4101640046; 4101640061; 4101640084; 4101640103,1,
+Queens,LaGuardia,"8501 24th Ave, Flushing, NY 11370",4010800001,0,
+Queens,Queens Village,"97-11 222nd St, Queens, NY 11429",4108080001,1,
+Queens,Baisley Park,"114-15 Guy R Brewer Blvd, Queens, NY 11434",4123270008; 4123270001,0,
+Queens,Far Rockaway,"49-19 Rockaway Beach Blvd, Far Rockaway, NY 11691",4158550001,0,
+Queens,JFK,"165-25 147th Ave, Queens, NY 11434",4132960014; 4132960007; 4132960101; 4132980011,0,
+Queens,Spring Creek,"12755 Flatlands Ave, Brooklyn, NY 11208",3045660005,0,
+Staten Island,Castleton,"1390 Castleton Ave, Staten Island, NY 10302",5002150001; 5002150288; 5002150005,1,
+Staten Island,Charleston,"4700 Arthur Kill Rd, Staten Island, NY 10309",5074870100,0,
+Staten Island,Meredith Avenue,"336 Meredith Ave, Staten Island, NY 10314",5028100080,0,"Suspect this one is a lot of express buses, where the tech isn't there yet. This one is being electrified only in the final phase according to the transition plan"
+Staten Island,Yukon,"40 Yukon Ave, Staten Island, NY 10314",5023590400,0,
+Bus Plaza,South Ferry,"Peter Minuit Plaza, 10004",1000030003; 1000030002,0,
+Bus Plaza,Williamsburg Bridge,"215 Broadway, 11211",3024460056,0,
+Bus Plaza,Archer Ave/Teardrop Canopy,"150 Street, 11433",4100940041; 4100940073,0,"Canopy is next to the LIRR elevated tracks, and could be on the island"
