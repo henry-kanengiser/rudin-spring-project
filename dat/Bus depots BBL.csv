@@ -5,14 +5,14 @@ Bronx,Kingsbridge,"4065 10th Ave, New York, NY 10034",1022130006; 1021970001,1,
 Bronx,West Farms,"1100 E 177th St, Bronx, NY 10460",2039040040; 2039040016,1,
 Bronx,Yonkers,"60 Babcock Pl, Yonkers, NY 10701",,0,Outside NYC - may need to manually draw a shapefile for the building footprint?
 Brooklyn,East New York,"25 Jamaica Ave, Brooklyn, NY 11207",3034760010,1,"This includes a train yard also, may need to be careful about that or check the bldg footprint info"
-Brooklyn,Flatbush,"4901 Fillmore Ave, Brooklyn, NY 11234",3084890001; 3078940001; 3078940001,1,
+Brooklyn,Flatbush,"4901 Fillmore Ave, Brooklyn, NY 11234",3084890001; 3078940001,1,
 Brooklyn,Fresh Pond,"66-99 Fresh Pond Rd, Queens, NY 11385",4036190003,1,
 Brooklyn,Grand Avenue,"48-05 Grand Ave, Maspeth, NY 11378",4026020001; 4026020045,1,
 Brooklyn,Jackie Gleason,"871 5th Ave, Brooklyn, NY 11232",3009030190; 3009030180,0,
 Brooklyn,Ulmer Park,"2449 Harway Ave, Brooklyn, NY 11214",3068930001; 3068920023; 3068940001,1,
 Manhattan,Manhattanville,"601 W 133rd St, New York, NY 10027",1019990001,1,
 Manhattan,Michael J. Quill,"525 11th Ave, New York, NY 10018",1010880001,1,
-Manhattan,Monther Clara Hale,"721 Malcolm X Blvd, New York, NY 10039",1020150006,1,Note: this terminal already has a green roof
+Manhattan,Mother Clara Hale,"721 Malcolm X Blvd, New York, NY 10039",1020150006,1,Note: this terminal already has a green roof
 Manhattan,Tuskegee Airmen,"1552 Lexington Ave, New York, NY 10029",1016270001,1,
 Queens,Casey Stengel,"123-53 Willets Point Blvd, Queens, NY 11368",4020181000,1,There are other MTA owned lots nearby but this is the only one with the bus depot. The train maintenance facility (Corona) has solar panels (PDF)
 Queens,College Point,"128-15 28th Ave, College Point, NY 11354",4042950001; 4043000001,1,"Seems to be a DOT building on the north side of the lot, may need to manually check which building footprints are included)"
