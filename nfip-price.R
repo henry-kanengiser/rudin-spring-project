@@ -10,6 +10,7 @@
 
 library(tidyverse) 
 library(data.table)
+library(clipr)
 # library(jsonlite)
 # library(httr)
 # library(data.table)
@@ -19,14 +20,45 @@ library(data.table)
 
 # 1. Read in data -------------------------------------------------------------
 
-nfip <- fread("https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv", sep = ",", nrows = 100)
+nfip_ny <- read_csv("nfip_ny.csv") %>%
+  mutate(year = year(policyEffectiveDate))
 
-nfip <- fread("https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv", 
-              sep = ",", 
-              # nrows = 100,
-              select = c(censusTract, reportedZipCode, id, policyCost, policyCount, propertyState, policyEffectiveDate))
+nfip_ny %>%
+  filter(reportedZipCode == "11249") %>%
+  group_by(reportedZipCode, year) %>%
+  summarise(avg_policyCost = mean(policyCost),
+            n = n()) %>%
+  write_clip()
 
 
+
+
+nfip <- fread("https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv", sep = ",")
+
+nfip <- fread(cmd="grep 'NY' https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv",
+              select = c("censusTract", "reportedZipCode", "id", "policyCost", 
+                         "policyCount", "propertyState", "policyEffectiveDate"))
+
+nfip <- fread(cmd=paste("grep", " 'NY' ","https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv"),
+              select = c("censusTract", "reportedZipCode", "id", "policyCost", 
+                         "policyCount", "propertyState", "policyEffectiveDate"))
+
+nfip <- fread("https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv", sep = ",", 
+              select = c("censusTract", "reportedZipCode", "id", "policyCost", 
+                         "policyCount", "propertyState", "policyEffectiveDate"))
+
+nfip <- fread("https://www.fema.gov/about/reports-and-data/openfema/FimaNfipPolicies.csv", sep = ",", 
+              select = c("censusTract", "reportedZipCode", "id", "policyCost", 
+                         "policyCount", "propertyState", "policyEffectiveDate"))[reportedZipCode = "11249"]
+
+nfip_ny <- nfip[nfip$propertyState == "NY"]
+
+nfip_canarsie <- nfip[nfip$reportedZipCode == "11249"]
+
+nfip_tract
+
+write_csv(nfip_ny, "nfip_ny.csv")
+write_csv(nfip_canarsie, "nfip_canarsie.csv")
 
 # nfip <- read.csv.sql("FimaNfipPolicies.csv",
 #                      "select * from file
