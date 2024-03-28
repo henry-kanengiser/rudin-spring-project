@@ -73,7 +73,17 @@ tranvars <- c(commute_tot = "B08006_001",
 acsvars <- c(totpopvar, racevars, incvars, empvars, engvars, vehvars, tranvars)
 
 ## Download data from ACS ----
+
+### TRACT LEVEL
 acs <- get_acs(geography = "tract", 
+               variables = c(acsvars),
+               state = "NY",
+               county = "Richmond",
+               year = 2022,
+               survey = "acs5")
+
+### COUNTY LEVEL
+acs_county <- get_acs(geography = "county", 
                variables = c(acsvars),
                state = "NY",
                county = "Richmond",
@@ -90,8 +100,31 @@ acs_wide <- acs %>%
   # create Other race category based on existing categories
   mutate(re_other = nhisp - (asian + black + white))
 
+acs_county_wide <- acs_county %>%
+  clean_names() %>%
+  select(-moe) %>%
+  pivot_wider(id_cols = c(geoid, name),
+              names_from = variable,
+              values_from = estimate) %>%
+  # create Other race category based on existing categories
+  mutate(re_other = nhisp - (asian + black + white))
+
+
 ## Join to census tract to calculate the population density ----
 acs_wide2 <- acs_wide %>%
   full_join(ct, by = "geoid") %>%
   mutate(popdens_sqmi = totpop/area_sqmi)
+
+
+# 3. Save permanent datasets --------------------------------------------------
+
+acs_wide2 %>%
+  st_drop_geometry() %>%
+  write_csv("si_dat/si_acs_ct.csv")
+
+acs_county_wide %>%
+  write_csv("si_dat/si_acs_county.csv")
+
+acs_wide2 %>%
+  st_write("si_dat/si_acs_ct.shp", delete_dsn = TRUE)
 
