@@ -16,8 +16,11 @@ tmap_mode("view")
 
 # 1. Read in county shapefiles ------------------------------------------------
 
-counties <- counties(state = c("NJ", "NY"))
+counties <- counties(state = c("NJ", "NY"), cb = TRUE, resolution = "500k")
 
+# # check output looks right (commented out for now)
+# tm_shape(counties) + 
+#   tm_polygons()
 
 # 2. Read in bus route GTFS ---------------------------------------------------
 
